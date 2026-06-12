@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --charcoal: #1C1A16;
+  --stone: #EDE8DF;
+  --ivory: #F5F1EA;
+  --brass: #B8963E;
+  --gold: #D4AB5A;
+  --grey: #8E8375;
+  --line: rgba(28,26,22,0.12);
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+}
+
+section {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+::selection { background: var(--brass); color: var(--ivory); }
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--brass); }
+
+/* Global zoom-on-hover for images outside hero */
+main section:not(#hero) .zoom-wrap {
+  overflow: hidden;
+}
+main section:not(#hero) .zoom-wrap:hover img {
+  transform: scale(1.05);
+  transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
